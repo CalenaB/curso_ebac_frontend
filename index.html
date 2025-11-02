@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário valor B maior que A</title>
+    <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Verificação de Valor B maior que A</h1>
+        <h2>Preencha os valores</h2>
+        <form id="forms">
+            <input type="number" id="field-a" required placeholder="Campo A" />
+            <input type="number" id="field-b" required placeholder="Campo B" />
+            <p class="error-message">
+                O valor de B precisa ser maior que o valor de A. 
+            </p>
+            <button id="btn-submit" type="submit">Submeter</button>
+        </form>
+        <p class="success-message"></p>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>
