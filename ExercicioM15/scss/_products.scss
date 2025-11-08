@@ -1,0 +1,49 @@
+section {
+    padding: $padding-section 0;
+
+    h2 {
+    color: $primary-color;
+    }
+
+    .products {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 32.66%);
+    column-gap: $gap-column;
+    row-gap: $gap-row;
+    width: 100%;
+    }
+
+    .product-item {
+    img {
+        width: 100%;
+        border-radius: $border-radius;
+    }
+
+    h4 {
+        margin-top: 8px;
+        color: #333;
+    }
+
+    p {
+        font-size: 0.9rem;
+        margin-top: 4px;
+    }
+
+    .product-button {
+        display: block;
+        background-color: $secondary-color;
+        color: $text-color;
+        text-align: center;
+        padding: 8px 0;
+        border-radius: $border-radius-small;
+        margin-top: 8px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+
+        &:hover {
+        background-color: $secondary-color-hover;
+        }
+    }
+    }
+}
