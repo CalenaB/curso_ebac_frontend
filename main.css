@@ -1,0 +1,45 @@
+/* ====== BLOCK: products ====== */
+
+.products {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+
+/* ====== ELEMENTS ====== */
+
+.products__item {
+    border: 1px solid #ccc;
+    padding: 15px;
+    text-align: center;
+    width: 150px;
+    border-radius: 6px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.products__image {
+    width: 100px;
+    height: 100px;
+}
+
+.products__name {
+    margin: 10px 0 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.products__description {
+    font-size: 14px;
+    color: #555;
+}
+
+
+/* ====== MODIFIER ====== */
+
+.products__item--featured {
+    border-color: #ff9800;
+    background-color: #fff3e0;
+    box-shadow: 0 0 10px rgba(255, 152, 0, 0.5);
+    transform: scale(1.05);
+}
