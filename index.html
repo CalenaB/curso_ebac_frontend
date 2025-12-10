@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Github</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img class="profile-avatar" src="https://via.placeholder.com/180x180" alt=".">
+            <h1 class="profile-name">Calena Bittencourt</h1>
+            <h2 class="profile-username">@calenab</h2>
+            <ul class="numbers">
+                <li class="numbers-item">
+                    <h4>Repositórios</h4>
+                    5
+                </li>
+                <li class="numbers-item">
+                    <h4>Seguidores</h4>
+                    5
+                </li>
+                <li class="numbers-item">
+                    <h4>Seguindo</h4>
+                    5
+                </li>
+            </ul>
+            <a href="#" class="profile-link">Ver no Github</a>
+        </div>
+    </header>
+    <script>
+    const API_URL = 'https://api.github.com/users/CalenaB';
+
+    async function carregarPerfil() {
+    try {
+        const response = await fetch(API_URL);
+
+
+        if (!response.ok) {
+        throw new Error(`Erro HTTP: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        const avatarUrl = data.avatar_url || 'https://via.placeholder.com/180x180';
+        const name = data.name || data.login || 'Usuário';
+        const username = data.login ? `@${data.login}` : '';
+        const repos = data.public_repos ?? 0;
+        const followers = data.followers ?? 0;
+        const following = data.following ?? 0;
+        const htmlUrl = data.html_url || '#';
+
+        document.querySelector('.profile-avatar').src = avatarUrl;
+        document.querySelector('.profile-name').textContent = name;
+        document.querySelector('.profile-username').textContent = username;
+        document.querySelector('.numbers-item:nth-child(1)').childNodes[1].nodeValue = repos;
+        document.querySelector('.numbers-item:nth-child(2)').childNodes[1].nodeValue = followers;
+        document.querySelector('.numbers-item:nth-child(3)').childNodes[1].nodeValue = following;
+        document.querySelector('.profile-link').href = htmlUrl;
+
+    } catch (error) {
+        console.error('Erro ao carregar perfil:', error);
+    }
+    }
+
+    window.addEventListener('DOMContentLoaded', carregarPerfil);
+</script>
+</body>
+</html>
